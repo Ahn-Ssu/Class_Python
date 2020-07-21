@@ -1,4 +1,3 @@
 # PythonPractice
 
 Hello
-ㅇㅅㅇ ㅇㅅㅇ 
