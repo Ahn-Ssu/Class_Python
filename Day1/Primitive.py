@@ -38,3 +38,8 @@ s[::2] # 2칸 단위로
 s[::-1] # 거꾸로
 
 print(len(s))
+
+a = 500
+b = 500
+print(id(a))
+print(id(b))
