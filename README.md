@@ -1,3 +1,3 @@
 # PythonPractice
 
-Hello
+Day 1 = 07, 21 
