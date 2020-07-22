@@ -15,3 +15,20 @@
 
 
 
+
+# 문서 문자열 
+# 모듈의 시작 부분에 있거나, def, class문 다음에 바로 나오는 문자열 
+
+#... 모듈 문서 문자열 
+'''
+Module __doc__ string
+line1
+line2
+'''
+class Ham:
+    "Ham class __doc__ string" # 클래스 문서 문자열
+    def func(self):
+        "Ham class func __doc__ string" # 함수나 메소드 문서 문자열 
+        pass 
+
+# 문서 문자열은 각 객체의 __doc__이라는 내장 멤버에 저장 됨 
