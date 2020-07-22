@@ -27,3 +27,36 @@ myStack.pop(2) # 인덱스 지정 가능
 myQueue = [9,8,7,6,5]
 myQueue.append(60)
 myQueue.pop(0) # queue 의 pop 연산, 인덱스 지정으로 기능을 수행하게 끔 해줌 
+
+#리스트 정렬, 정렬 기준자 전달 
+L = [123, 34, 56, 2345]
+L.sort() # 문자열 정렬됨
+L.sort(key = str) # 숫자 기준 정렬ㄹ 됨  
+
+def myKey(a):
+    return a%3 
+
+L.sort(key = myKey)
+
+#리스트 전달, 저장된 객체의 순서를 건드리지 않는 sorted()
+#리스트 뿐만 아니라 사전에도 사용 가능  
+newList = sorted(L)
+newList1 = sorted(L, key = int)
+for element in sorted(L):
+    print(element, end = ' ')
+
+#리스트 내장, 알아서 만드는 거임 
+LI = [k*k for k in range(10)] # [] 를 사용하면 리스트를 만들고 내부룰 수행함 
+print(LI)
+#리스트 내장 -> 발생자 내장, 호출할때마다 생성해서 넘겨줌 메모리 절약
+LG = (k*k for k in range(10)) # () 를 사용하면 리스트를 만들지 않고 내부를 구성 
+sum(k*k for k in range(10))
+sum([x*x for x in range(10)])
+
+#range () 함수 
+# for문과 같이 사용하는데, list를 줌 
+# 리스트를 생성하지 않고 반복자를 통해 필요할 떄 동작하여 작동  
+range(10) # (0, 10)
+range(10,20) # (10, 20) 1간격
+range(15,25,2) # (15, 25) 2씩 증가
+range(25,15,-1) # 1씩 변화를 줌 
