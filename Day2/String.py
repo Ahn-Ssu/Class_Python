@@ -12,8 +12,15 @@
 # 멤버 검사 in 연산자, 어떤 값이 시퀀스 자료형에 속하는지를 검사한다
 # 길이 정보 len() 내장 함수, 시퀀스형 데이터 크기 리턴
 
-
-
+#문자열 포맷
+number = 10
+day = "three"
+strEx = "I ate %d apples, so I was sick for %s days." % (number, day)
+print(strEx)
+# 자바 동일 %d 정수, %f 실수, %s 문자열
+# 근데 %s로 쓰면 알아서 다 문자열로 바뀌어서 들어감 ( 자동 캐스팅 )
+strEx2 = "who are you? {}".format("??")
+strEx3 = "I am {name}.".format(name="수현")
 
 
 # 문서 문자열 
