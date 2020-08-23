@@ -22,5 +22,4 @@ t = (1,2,3)
  # 괄호를 안쳐도 튜플임
 tupleEx = 1,2,3,4
 print(type(tupleEx)) # <class 'tuple'>
-
 # 근데 튜플은 값을 변경할 수 없음 

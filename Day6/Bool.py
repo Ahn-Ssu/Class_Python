@@ -2,7 +2,7 @@
 tureStr = "python"
 tureList = [12,3,4]
 tureTuple = (2,3,4,5)
-tureDictionary = {~~~}
+# tureDictionary = {~~~}
 tureNumer = 1
 
 # 거짓
