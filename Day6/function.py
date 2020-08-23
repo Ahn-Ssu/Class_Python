@@ -2,7 +2,7 @@
 def sum_up(*args):
     result = 0
     for i in args:
-        result = result + i
+        result += i
     
     return result 
 
