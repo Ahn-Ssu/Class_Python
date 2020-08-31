@@ -10,6 +10,13 @@ d1['four'] = '넷'
 # 기존에 항목이 있으면 값이 변경 됨 
 print(d1)
 
+# 딕셔너리 요소 삭제하기 
+print(d2)
+del d2["one"] # 이렇게 딕셔너리는 Key로 지정해서 key - value 셋을 날려줌 
+print(d2)
+
+# 주의사항 
+# 딕셔너리에 Key 값으로 list는 안되고 Tuple 가능함 : 이유 Key는 변경하면 Hash를 못찾기 때문에 
 print(d1.keys())
 print(d1.values())
 print(d1.items())
