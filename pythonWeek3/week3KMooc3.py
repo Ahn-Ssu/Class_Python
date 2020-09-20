@@ -7,3 +7,5 @@ print()
 print("당신의 이름은 {}".format(myName))
 print("{}에 소속되어 있으시군요".format(myBelong))
 print("당신의 나이는 {}세 맞죠?".format(2020-myBirhyear+1))
+
+
