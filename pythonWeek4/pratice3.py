@@ -7,7 +7,7 @@ englishScore = float(input("영어 성적을 입력해주세욥 : "))
 mathScore = float(input("수학 성적을 입력해주세요 : "))
 
 average = (koreanScore+englishScore+mathScore)/3.0
-# print("3개 과목의 평균은 {:>4}입니다".format(average))
+
 
 if koreanScore<50 or englishScore<50 or mathScore <50:
     print("과락")
