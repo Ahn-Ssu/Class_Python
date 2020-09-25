@@ -72,15 +72,15 @@ else:
             modeType = int (modeType)
             # 입력한 세부항목 재확인 
             # print("입력하신 세부항목은",length[modeType-1])
-            inputValue = input("변환할 양수 값만 입력해주세요! 현재 모드 --> "+length[modeType-1]+"\n입력 :")
-            if inputValue.isdigit() and float(inputValue) > 0 :
-                inputValue = float(inputValue)
+            inputValue = input("변환할 양의정수 값만 입력해주세요! 현재 모드 --> "+length[modeType-1]+"\n입력 :")
+            if inputValue.isdigit() and int(inputValue) > 0 :
+                inputValue = int(inputValue)
                 if modeType == 1 :# 센티미터(cm)->인치(in)
-                    print("입력하신", inputValue,"센티미터(cm) -> 인치(in) 변환 값 =",inputValue*0.39370)
+                    print("입력하신", inputValue,"센티미터(cm) -> 인치(in) 변환 값 =",round(inputValue*0.39370,2))
                 elif modeType == 2 :# 센티미터(cm)->미터(m)
-                    print("입력하신", inputValue,"센티미터(cm) -> 미터(m) 변환 값 =",inputValue*0.01)
+                    print("입력하신", inputValue,"센티미터(cm) -> 미터(m) 변환 값 =",round(inputValue*0.01,2))
                 elif modeType == 3 :# 인치(in)->센티미터(cm)
-                    print("입력하신", inputValue,"센티미터(cm) -> 인치(in) 변환 값 =",inputValue/0.39370)
+                    print("입력하신", inputValue,"센티미터(cm) -> 인치(in) 변환 값 =",round(inputValue/0.39370,2))
                 print(seperator)
             else:
                 print("!!!입력 값 :", inputValue, " 양수를 입력하지 않았습니다!!!")
@@ -104,15 +104,15 @@ else:
             modeType = int (modeType)
             # 입력한 세부항목 재확인 
             # print("입력하신 세부항목은",length[modeType-1])
-            inputValue = input("변환할 양수 값만 입력해주세요! 현재 모드 --> "+area[modeType-1]+"\n입력 :")
-            if inputValue.isdigit() and float(inputValue) > 0 :
-                inputValue = float(inputValue)
+            inputValue = input("변환할 양의정수 값만 입력해주세요! 현재 모드 --> "+area[modeType-1]+"\n입력 :")
+            if inputValue.isdigit() and int(inputValue) > 0 :
+                inputValue = int(inputValue)
                 if modeType == 1 :# "제곱미터(m^2)->평" 
-                    print("입력하신", inputValue,"제곱미터(m^2)->평 변환 값 =",inputValue*3.305785)
+                    print("입력하신", inputValue,"제곱미터(m^2)->평 변환 값 =",round(inputValue*3.305785,2))
                 elif modeType == 2 :# "제곱미터(m^2)->제곱피트(ft^2)"
-                    print("입력하신", inputValue,"제곱미터(m^2)->제곱피트(ft^2) 변환 값 =",inputValue*10.76391)
+                    print("입력하신", inputValue,"제곱미터(m^2)->제곱피트(ft^2) 변환 값 =",round(inputValue*10.76391,2))
                 elif modeType == 3 :# "제곱미터(m^2)->제곱야드(yd^2)"
-                    print("입력하신", inputValue,"제곱미터(m^2)->제곱야드(yd^2) 변환 값 =",inputValue*1.19599)
+                    print("입력하신", inputValue,"제곱미터(m^2)->제곱야드(yd^2) 변환 값 =",round(inputValue*1.19599,2))
                 print(seperator)
             else:
                 print("!!!입력 값 :", inputValue, " 양수를 입력하지 않았습니다!!!")
@@ -136,15 +136,15 @@ else:
             modeType = int (modeType)
             # 입력한 세부항목 재확인 
             # print("입력하신 세부항목은",length[modeType-1])
-            inputValue = input("변환할 양수 값만 입력해주세요! 현재 모드 --> "+weight[modeType-1]+"\n입력 :")
-            if inputValue.isdigit() and float(inputValue) > 0 :
-                inputValue = float(inputValue)
+            inputValue = input("변환할 양의정수 값만 입력해주세요! 현재 모드 --> "+weight[modeType-1]+"\n입력 :")
+            if inputValue.isdigit() and int(inputValue) > 0 :
+                inputValue = int(inputValue)
                 if modeType == 1 :# 킬로그램(kg)->그램(g)
-                    print("입력하신", inputValue,"킬로그램(kg)->그램(g) 변환 값 =",inputValue*1000)
+                    print("입력하신", inputValue,"킬로그램(kg)->그램(g) 변환 값 =",round(inputValue*1000,2))
                 elif modeType == 2 :# "그램(g)->온스(oz)"
-                    print("입력하신", inputValue,"그램(g)->온스(oz) 변환 값 =",inputValue*0.035274)
+                    print("입력하신", inputValue,"그램(g)->온스(oz) 변환 값 =",round(inputValue*0.035274,2))
                 elif modeType == 3 :# "킬로그램(kg)->파운드(lb)"
-                    print("입력하신", inputValue,"킬로그램(kg)->파운드(lb) 변환 값 =",inputValue*2.204623)
+                    print("입력하신", inputValue,"킬로그램(kg)->파운드(lb) 변환 값 =",round(inputValue*2.204623,2))
                 print(seperator)
             else:
                 print("!!!입력 값 :", inputValue, " 양수를 입력하지 않았습니다!!!")
@@ -168,15 +168,15 @@ else:
             modeType = int (modeType)
             # 입력한 세부항목 재확인 
             # print("입력하신 세부항목은",length[modeType-1])
-            inputValue = input("변환할 양수 값만 입력해주세요! 현재 모드 --> "+temp[modeType-1]+"\n입력 :")
-            if inputValue.isdigit() and float(inputValue) > 0 :
-                inputValue = float(inputValue)
+            inputValue = input("변환할 양의정수 값만 입력해주세요! 현재 모드 --> "+temp[modeType-1]+"\n입력 :")
+            if inputValue.isdigit() and int(inputValue) > 0 :
+                inputValue = int(inputValue)
                 if modeType == 1 :#  섭씨온도('C)->화씨온도('F)
-                    print("입력하신", inputValue,"섭씨온도('C)->화씨온도('F) 변환 값 =",inputValue*1.8 + 32)
+                    print("입력하신", inputValue,"섭씨온도('C)->화씨온도('F) 변환 값 =",round(inputValue*1.8 + 32,2))
                 elif modeType == 2 :# 화씨온도('F)->섭씨온도('C)
-                    print("입력하신", inputValue,"화씨온도('F)->섭씨온도('C) 변환 값 =",inputValue/1.8 - 32)
+                    print("입력하신", inputValue,"화씨온도('F)->섭씨온도('C) 변환 값 =",round(inputValue/1.8 - 32,2))
                 elif modeType == 3 :# 섭씨온도('C)->절대온도(K)
-                    print("입력하신", inputValue,"섭씨온도('C)->절대온도(K) 변환 값 =",inputValue-273.15)
+                    print("입력하신", inputValue,"섭씨온도('C)->절대온도(K) 변환 값 =",round(inputValue-273.15,2))
                 print(seperator)
             else:
                 print("!!!입력 값 :", inputValue, " 양수를 입력하지 않았습니다!!!")
@@ -200,15 +200,15 @@ else:
             modeType = int (modeType)
             # 입력한 세부항목 재확인 
             # print("입력하신 세부항목은",length[modeType-1])
-            inputValue = input("변환할 양수 값만 입력해주세요! 현재 모드 --> "+speed[modeType-1]+"\n입력 :")
-            if inputValue.isdigit() and float(inputValue) > 0 :
-                inputValue = float(inputValue)
+            inputValue = input("변환할 양의정수 값만 입력해주세요! 현재 모드 --> "+speed[modeType-1]+"\n입력 :")
+            if inputValue.isdigit() and int(inputValue) > 0 :
+                inputValue = int(inputValue)
                 if modeType == 1 :#  초속(m/s)->시속(km/h)
-                    print("입력하신", inputValue,"초속(m/s)->시속(km/h) 변환 값 =",inputValue*3.6)
+                    print("입력하신", inputValue,"초속(m/s)->시속(km/h) 변환 값 =",round(inputValue*3.6,2))
                 elif modeType == 2 :# 초속(m/s)->시속(m/h)
-                    print("입력하신", inputValue,"초속(m/s)->시속(m/h) 변환 값 =",inputValue*3600)
+                    print("입력하신", inputValue,"초속(m/s)->시속(m/h) 변환 값 =",round(inputValue*3600,2))
                 elif modeType == 3 :# 시속(km/h)->시속(m/s)
-                    print("입력하신", inputValue,"시속(km/h)->시속(m/s) 변환 값 =",inputValue*0.277778)
+                    print("입력하신", inputValue,"시속(km/h)->시속(m/s) 변환 값 =",round(inputValue*0.277778,2))
                 print(seperator)
             else:
                 print("!!!입력 값 :", inputValue, " 양수를 입력하지 않았습니다!!!")
@@ -232,15 +232,15 @@ else:
             modeType = int (modeType)
             # 입력한 세부항목 재확인 
             # print("입력하신 세부항목은",length[modeType-1])
-            inputValue = input("변환할 양수 값만 입력해주세요! 현재 모드 --> "+data[modeType-1]+"\n입력 :")
-            if inputValue.isdigit() and float(inputValue) > 0 :
-                inputValue = float(inputValue)
+            inputValue = input("변환할 양의정수 값만 입력해주세요! 현재 모드 --> "+data[modeType-1]+"\n입력 :")
+            if inputValue.isdigit() and int(inputValue) > 0 :
+                inputValue = int(inputValue)
                 if modeType == 1 :#  메가바이트(MB)->킬로바이트(KB)
-                    print("입력하신", inputValue,"메가바이트(MB)->킬로바이트(KB) 변환 값 =",inputValue*1024)
+                    print("입력하신", inputValue,"메가바이트(MB)->킬로바이트(KB) 변환 값 =",round(inputValue*1024,2))
                 elif modeType == 2 :# 메가바이트(MB)->기가바이트(GB)
-                    print("입력하신", inputValue,"메가바이트(MB)->기가바이트(GB) 변환 값 =",inputValue*0.000977)
+                    print("입력하신", inputValue,"메가바이트(MB)->기가바이트(GB) 변환 값 =",round(inputValue*0.000977,2))
                 elif modeType == 3 :# 기가바이트(GB)->테라바이트(TB)
-                    print("입력하신", inputValue,"기가바이트(GB)->테라바이트(TB) 변환 값 =",inputValue*0.000977)
+                    print("입력하신", inputValue,"기가바이트(GB)->테라바이트(TB) 변환 값 =",round(inputValue*0.000977,2))
                 print(seperator)
             else:
                 print("!!!입력 값 :", inputValue, " 양수를 입력하지 않았습니다!!!")
@@ -264,15 +264,15 @@ else:
             modeType = int (modeType)
             # 입력한 세부항목 재확인 
             # print("입력하신 세부항목은",length[modeType-1])
-            inputValue = input("변환할 양수 값만 입력해주세요! 현재 모드 --> "+time[modeType-1]+"\n입력 :")
-            if inputValue.isdigit() and float(inputValue) > 0 :
-                inputValue = float(inputValue)
+            inputValue = input("변환할 양의정수 값만 입력해주세요! 현재 모드 --> "+time[modeType-1]+"\n입력 :")
+            if inputValue.isdigit() and int(inputValue) > 0 :
+                inputValue = int(inputValue)
                 if modeType == 1 :#  초->분
-                    print("입력하신", inputValue,"초->분 변환 값 =",inputValue/60)
+                    print("입력하신", inputValue,"초->분 변환 값 =",round(inputValue/60,2))
                 elif modeType == 2 :# 분->시간 
-                    print("입력하신", inputValue,"분->시간  변환 값 =",inputValue/60)
+                    print("입력하신", inputValue,"분->시간  변환 값 =",round(inputValue/60,2))
                 elif modeType == 3 :# 시간->초
-                    print("입력하신", inputValue,"시간->초 변환 값 =",inputValue*360)
+                    print("입력하신", inputValue,"시간->초 변환 값 =",round(inputValue*360,2))
                 print(seperator)
             else:
                 print("!!!입력 값 :", inputValue, " 양수를 입력하지 않았습니다!!!")
