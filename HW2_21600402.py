@@ -109,10 +109,23 @@ while 1:
         print("!경고! 잘못입력하셨어요, 범위 내의 숫자로 입력해주세요. 입력한 값 = {}".format(finalConfirm))
 
     if finalConfirm == "1":
-        stageNumber = stageNumber + 1
+        print("="*100)
+        print("[알림] 이전 수험생 상태 >>>  | ", end="")
+        for stat, users in zip (statList,userStat):
+            print("{} : {}".format(stat,users), end=" | ")
+        print()
         for indexNumber, stat in zip(range(0,4),nowEvent[stageNumber]):
             userStat[indexNumber] = userStat[indexNumber] + stat
-    if stageNumber > 4 :
+        print("[알림] 현재 수험생 상태 >>>  | ", end="")
+        for stat, users in zip (statList,userStat):
+            print("{} : {}".format(stat,users), end=" | ")
+        print()
+        if user == 0 :
+            
+        elif user == 1:
+        elif user == 2: 
+        stageNumber = stageNumber + 1
+    if stageNumber > 3:
         break
 
 
