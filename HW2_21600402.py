@@ -106,7 +106,7 @@ while 1:
     print("       남은 기간 {}".format(roundList[stageNumber:]))
 
     # 조건 4-e) 3,4 라운드일때 해당 클래스의 점수가 기준치 이하이면 경고메세지를 제공한다.
-    if stageNumber>1 and userStat[user] <8 :
+    if (stageNumber>1 and userStat[user]<8) or (stageNumber>2 and userStat[user]<13)  :
         print("[알림] !주의! 성공적인 {} 생활의 마무리는 {}이 {} 이상 되어야 합니다.".format(playClass[user], statList[user], requireStat[user]))
     
     print("="*100)
