@@ -1,17 +1,18 @@
 # 연습하기 3번
-f1 = ['apple', 'blueberry','melon','tomato']
-f2 = ['strawberry', 'lemon', 'banana']
-f3 = f1 + f2
-print(f3)
 
-index = len(f3)
-i = 0
+List01 = ['apple','banana','quiz','hi','bye']
+List01_modified =List01
+List02 =['Korea','hi','LOL','Python','apple']
 
-while i < index :
-    if f3[i][0] == "b":
-        f3.remove(f3[i])
-        i = i - 1
-        index = index -1 # 삭제하면 전체길이가 줄어들음 
-    i = i + 1
 
-print("remove all 'b' elements = ", f3)
+for i in range(len(List01)):
+    if List01[i] in List02:
+        List02.remove(List01[i])
+
+List03 = List01 + List02
+print("List01: ",List01)
+print("List02: ",List02)
+print("합친 후: ",List03)
+
+List03.sort()
+print("정렬 후: ",List03)
