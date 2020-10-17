@@ -223,7 +223,7 @@ for stat, users in zip(statList, userStat):
 print()
 
 # 조건 5) 모든 이벤트가 끝나면 점수를 평가하여 미션에 성공했는지 실패했는지 출력한다. 
-if requireStat[user]<userStat[user] :
+if requireStat[user]<=userStat[user] :
     print("축하합니다 당신의 ⋆⁺₊⋆{}⋆⁺₊⋆수험생은 {}이 {} 이상 되어 수험생활을 성공적으로 마쳤습니다".format(playClass[user], statList[user], requireStat[user]))
 else:
     print("ㅠㅠ 당신의 {}수험생은 {}이 {} 이상이 되지 못해 이번 수험생활을 아쉽게 마쳤습니다".format(playClass[user], statList[user], requireStat[user]))
