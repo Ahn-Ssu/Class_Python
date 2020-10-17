@@ -1,17 +1,14 @@
 # 연습하기 1번 
-f1 = ['apple', 'blueberry','melon','tomato']
-f2 = ['strawberry', 'lemon', 'banana']
-f3 = f1 + f2
-print(f3)
+inputString = input("문자열 입력")
 
-index = len(f3)
-i = 0
+stringList = inputString.split()
 
-while i < index :
-    if f3[i][0] == "b":
-        f3.remove(f3[i])
-        i = i - 1
-        index = index -1 # 삭제하면 전체길이가 줄어들음 
-    i = i + 1
+removeTarget = input("입력한 문자열 중 삭제할 단어 입력")
+if removeTarget in stringList:
+    stringList.remove(removeTarget)
 
-print("remove all 'b' elements = ", f3)
+appendSource = input("추가할 단어 입력")
+stringList.append(appendSource)
+
+convertString = ' '.join(stringList)
+print(convertString)
