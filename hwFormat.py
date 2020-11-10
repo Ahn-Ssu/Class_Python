@@ -5,3 +5,6 @@
 
 a 
 print(a)
+hello
+hi
+teste
