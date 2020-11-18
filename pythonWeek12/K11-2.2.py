@@ -1,13 +1,18 @@
 #연습하기 3번
 
-subjects = {
-    '김경미':['수학','과학'],
-    '최영희':['영어','수학'],
-    '강동원':'영어',
-    '정필수':['사회','역사'],
-    '박희수':'국어',
-    '이승철':['수학','과학'],
-}
+inf = open('./pythonWeek12/poem.txt', 'r')
+count = 0 
 
-lec = input("담당교사명을 입력하시오: ")
-print(subjects[lec])
+countlist = inf.readlines()
+count = len(countlist)
+inf.close()
+
+inf = open('./pythonWeek12/poem.txt', 'r')
+NumWord = []
+for i in range(count):
+    fline = inf.readline()
+    flist = fline.split()
+    NumWord.append(len(flist))
+    
+print(NumWord)
+inf.close()

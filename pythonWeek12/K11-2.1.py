@@ -1,17 +1,11 @@
 #연습하기 2번
 
-birthdate = {}
+inf = open('./pythonWeek12/poem.txt', 'r')
+sm = inf.readlines()
 
-def addBirth(num):
-    for i in range(num):
-        input_name = input("이름: ")
-        input_birth = int(input("생일: "))
-        birthdate[input_name] = input_birth
+for i in range(len(sm)):
+    s = sm[i].strip()
+    slist = s.split()
+    print(slist)
 
-addBirth(5)
-print(birthdate)
-
-name = input("생일을 삭제하고 싶은 사람의 이름을 입력하세요: ")
-birthdate.pop(name)
-print(name in birthdate)
-print(birthdate)
+inf.close() 
