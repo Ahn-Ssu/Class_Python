@@ -1,9 +1,14 @@
 #연습하기 1번
 
-s = 'abcdefghijklmnopqrstuvwxyz'
-Num = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+infile = open('./pythonWeek12/number.txt','r')
 
+numbers = infile.readlines()
 
-Tu_SNum = list( zip(s, Num))
+sum =0
+ave =0 
+for number in numbers:
+    sum += int(number)
 
-print(Tu_SNum)
+ave = sum / len(numbers)
+print("Sum :",sum)
+print("Ave :",ave)
