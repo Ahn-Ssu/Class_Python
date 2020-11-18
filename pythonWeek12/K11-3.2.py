@@ -1,22 +1,18 @@
 #연습하기 3번
-def findTeacher(sub):
-    subjects = {
-        '김경미':['수학','과학'],
-        '최영희':['영어','수학'],
-        '강동원':'영어',
-        '정필수':['사회','역사'],
-        '박희수':'국어',
-        '이승철':['수학','과학'],
-    }
+import os
+import shutil
 
-    teacher = []
-    for key in subjects.keys():
-        if sub in subjects[key]:
-            teacher.append(key)
+shutil.copy('./pythonWeek12/numpoem.txt','./pythonWeek12/nump.txt')
+os.remove("./pythonWeek12/numpoem.txt")
 
-    return teacher
-
-sub = input("과목을 입력하시오: ")
-print(findTeacher(sub))
-
-            
+try:
+    inf = open('nump.txt', 'r')
+    s = inf.readlines()
+    sum  = 0
+    for i in range(len(s)):
+        sum += sum + int(s[i])
+    print("평균 =", sum/len(s))
+except IOError as err:
+    print("I/O error: {}".format(err))
+else:
+    inf.close()

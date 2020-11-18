@@ -1,22 +1,22 @@
 #연습하기 2번
-def findTeacher(sub):
-    subjects = {
-        '김경미':['수학','과학'],
-        '최영희':['영어','수학'],
-        '강동원':'영어',
-        '정필수':['사회','역사'],
-        '박희수':'국어',
-        '이승철':['수학','과학'],
-    }
 
-    teacher = []
-    for key in subjects.keys():
-        if sub in subjects[key]:
-            teacher.append(key)
+try:
+    f = open('./pythonWeek12/poem.txt','r')
+    outf = open('./pythonWeek12/numpoem.txt','w')
+except IOError as err:
+    print("unabel to handel files", err)
 
-    return teacher
+Numword = []
+count = len(f.readlines())
+f.close()
 
-sub = input("과목을 입력하시오: ")
-print(findTeacher(sub))
+f = open('./pythonWeek12/poem.txt','r')
+for i in range(count):
+    fline = f.readline()
+    flist = fline.split()
+    outf.write(str(len(flist)) + "\n")
 
-            
+f.close()
+outf.close()
+f = open('./pythonWeek12/numpoem.txt','r')
+print(f.readlines())
