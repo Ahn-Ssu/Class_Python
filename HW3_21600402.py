@@ -48,11 +48,11 @@ print(decoLine)
 print(infoMessage)
 print(decoLine)
 
-
+"""
+11/20 교수님이 3번함수 기능 나누지 말라함 
 # 조건 3 - b
 # 빈 문자열과 공백 처리 하는 함수
 def preprocessing(source):
-
     # 사용자에게 직접 입력을 받는 경우는 string으로 입력이 오고 
     # validation을 할때는 list로 입력이 오기 때문에 isinstance으로 수행을 나눔 
     if isinstance(source,str):
@@ -68,16 +68,32 @@ def preprocessing(source):
         return validList
     else:
         return source
-
+"""
 
 # 조건 3 
 # 사용자로부터 받은 입력이 유효한지 검증하는 함수를 정의하라
 # checkType이 사용자에게 입력을 받을 때는 1이 오게하여 메세지가 출력되게하고
 #  자체 validation을 수행할 땐 0을 전달하여 메세지가 출력되지 않게 한다
 def validate_input(inputString, checkType):
+    inputList = []
+
     # 조건 3 - d 
     # 사용자로부터 받은 문장이 ,나누어 3개인지 판단한다.
-    inputList = preprocessing(inputString)
+    if isinstance(inputString,str):
+        # 조건 2 
+        # 콤마(,) 단위로 유닛을 구분함 
+        slist = inputString.split(",")
+        validList = []
+        for idx, element in enumerate(slist):
+            # 조건 3 -  c
+            # 빈 문자열이나 공백 등은 처리함 
+            if len(element.strip()) != 0:
+                validList.append(element.strip())
+        inputList = validList.copy()
+    else:
+        inputList = inputString
+
+    
     # 사용자로부터 받은 입력이 3개로 나누어지지 않은 경우 validate 함수 종료 
     if len(inputList) != 3 and checkType:
         print("','로 구분하여 3개의 입력을 하지 않았습니다!")
