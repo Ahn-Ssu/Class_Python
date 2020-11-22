@@ -147,7 +147,10 @@ def validate_input(inputString, checkType):
 
 
 # 조건 3 
+print("연령대 보기", ageLabel)
+print("측정부위 보기",areaLabel)
 userInput = input("콤마(,)로 구분하여 순서대로 연령대, 측정부위, 체온을 입력해주세요\n입력 : ")
+
 
 # 조건 4 + 조건 5 
 # 3번 조건을 위한 validate_input 함수를 사용하여 유효한 입력인지를 검증한다
