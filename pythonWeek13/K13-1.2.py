@@ -1,14 +1,24 @@
-#연습하기 1번
+from tkinter import *
+from tkinter import Tk, Canvas
+from PIL import ImageTk, Image
 
-infile = open('./pythonWeek12/number.txt','r')
+root = Tk()
+canvas = Canvas(root, width=400, height = 300)
+canvas.pack()
 
-numbers = infile.readlines()
+def oneclick(event):
+    im = Image.open('./pythonWeek13/theMoon.jpg')
+    canvas.image = ImageTk.PhotoImage(im)
+    canvas.create_image(0,0, image=canvas.image, anchor='nw')
 
-sum =0
-ave =0 
-for number in numbers:
-    sum += int(number)
+def doubleclick(event):
+    im = Image.open('./pythonWeek13/week4Handong 14.jpg')
+    canvas.image = ImageTk.PhotoImage(im)
+    canvas.create_image(0,0, image=canvas.image, anchor='nw')
 
-ave = sum / len(numbers)
-print("Sum :",sum)
-print("Ave :",ave)
+widget = Button(None, text="Mouse Clicks")
+widget.pack()
+widget.bind('<Button-1>',oneclick)
+widget.bind('<Double-1>',doubleclick)
+root.mainloop()
+
