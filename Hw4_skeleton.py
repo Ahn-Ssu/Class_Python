@@ -14,8 +14,10 @@ def centerWindow():
     x = (sw - 400)/2
     y = (sh- 400)/2
     root.geometry('%dx%d+%d+%d'%(w,h,x,y))
-
 centerWindow()
+
+
+
 root.mainloop()
 
 
@@ -50,6 +52,7 @@ def validateInput(ainputlist): # Q3 입력이 유효한지 검증하는 함수
 
 while True: # Q5
     # Q2 사용자로부터 연령대, 측정부위, 체온을 받는다.
+ 
     userinput = input('\n연령대('+str(agegrouplist)+' 중 하나), \n측정부위('+str(list(temperaturerangedict.keys()))+' 중 하나), \n체온을 , 를 이용하여 순서대로 입력하세요: ')
     userinputlist = userinput.split(',')
     message = validateInput(userinputlist) # Q4 3번 함수를 이용, 2번 입력을 검증
