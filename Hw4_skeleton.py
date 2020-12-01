@@ -1,3 +1,22 @@
+from tkinter import *
+
+
+root = Tk()
+root.title("체온 측정 프로그램")
+
+def centerWindow():
+    w = 500
+    h = 200
+
+    sw = root.winfo_screenwidth()
+    sh = root.winfo_screenheight()
+
+    x = (sw - 400)/2
+    y = (sh- 400)/2
+    root.geometry('%dx%d+%d+%d'%(w,h,x,y))
+
+centerWindow()
+root.mainloop()
 
 
 print('출입자의 체온을 기록합니다.....') # Q1 프로그램에 대한 안내문구
