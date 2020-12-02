@@ -61,6 +61,8 @@ def checkBodytemperature(agegroup, measurespot, bodytemperature):
         return '체온이 너무 낮거나 체온 측정이 잘못되었습니다.'
 
 """
+21600402 전산전자공학부 안수현 Hw4
+
 해당 주석 위의 코드들은 교수님이 제공해주신 hw3 의 코드 중 몇 가지의 함수를 사용하였음을 밝힙니다. 
 checkBodytemperature 함수 외의 변화를 준 내용은 없습니다.
 """
