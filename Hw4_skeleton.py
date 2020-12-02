@@ -1,24 +1,30 @@
 from tkinter import *
 
 
-root = Tk()
-root.title("체온 측정 프로그램")
+window = Tk()
+window.title("체온 측정 프로그램")
 
 def centerWindow():
     w = 500
     h = 200
 
-    sw = root.winfo_screenwidth()
-    sh = root.winfo_screenheight()
+    sw = window.winfo_screenwidth()
+    sh = window.winfo_screenheight()
 
     x = (sw - 400)/2
     y = (sh- 400)/2
-    root.geometry('%dx%d+%d+%d'%(w,h,x,y))
+    window.geometry('%dx%d+%d+%d'%(w,h,x,y))
 centerWindow()
 
+frame = Frame(window, relief="solid",padx=10,pady=10,bd=5)
+frame.pack()
 
+ageLabel = Label(frame, text="연령대 선택 :")
+ageLabel.grid(frame,row=0,column=0)
 
-root.mainloop()
+age0radio = Radiobutton(frame, text="0-2세", value=1).grid(frame,row=0,column=1)
+age3radio = Radiobutton(frame, text="3-10세", value=2).grid(frame,row=0,column=2)
+window.mainloop()
 
 
 print('출입자의 체온을 기록합니다.....') # Q1 프로그램에 대한 안내문구
