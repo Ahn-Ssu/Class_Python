@@ -1,69 +1,8 @@
-from tkinter import *
-
-
-window = Tk()
-window.title("체온 측정 프로그램")
-
-def centerWindow():
-    w = 500
-    h = 200
-
-    sw = window.winfo_screenwidth()
-    sh = window.winfo_screenheight()
-
-    x = (sw - 400)/2
-    y = (sh- 400)/2
-    window.geometry('%dx%d+%d+%d'%(w,h,x,y))
-centerWindow()
-
-# window에서 좌우로 구분하여 배치할수 있는 요소들을 배치하기 위해서 F1이라는 이름으로 프레임을 하나 만듬 
-frame_F1 = Frame(window, relief="solid",padx=10,pady=10)
-frame_F1.grid(row=0, column=0)
-
-# # F1 프레임을 좌우로 구분하기 위해서 프레임 내에서 프레임을 좌|우, 2개로 나누어서 생성함 
-# f1_lhs = Frame(frame_F1, relief="solid", padx=1, pady=1, width=20)
-# f1_lhs.grid(row=0, column=0)
-
-# f1_rhs = Frame(frame_F1, relief="solid", padx=1, pady=1)
-# f1_rhs.grid(row=0, column=1)
-
-
-#왼쪽에 놓일 라벨과 랜덤 생성 버튼 
-ageLabel = Label(frame_F1, text="연령대 선택 :",width=20)
-ageLabel.grid(row=0,column=0)
-
-areaLabel = Label(frame_F1, text="측정 부위 선택 :",width=20)
-areaLabel.grid(row=1,column=0)
-
-tempLabel = Label(frame_F1, text="체온 입력 :",width=20)
-tempLabel.grid(row=2,column=0)
 
 
 
-#오른쪽에 놓일 라벨과 결과 확인 버튼 
-agegetter = StringVar(value="11-65세")
-age0radio = Radiobutton(frame_F1, text="0-2세", value="0-2세", variable=agegetter, width=7).grid(row=0,column=1)
-age3radio = Radiobutton(frame_F1, text="3-10세", value="3-10세", variable=agegetter, width=7).grid(row=0,column=2)
-age3radio = Radiobutton(frame_F1, text="11-65세", value="11-65세", variable=agegetter, width=7).grid(row=0,column=3)
-age3radio = Radiobutton(frame_F1, text="65세 이상", value="65세 이상", variable=agegetter, width=7).grid(row=0,column=4)
-
-areagetter = StringVar(value="귀")
-area1Radio = Radiobutton(frame_F1, text="구강 ", value="구강", variable=areagetter, width=7).grid(row=1,column=1)
-area2Radio = Radiobutton(frame_F1, text="귀", value="귀", variable=areagetter, width=7).grid(row=1,column=2)
-area3Radio = Radiobutton(frame_F1, text="항문", value="항문", variable=areagetter, width=7).grid(row=1,column=3)
-area4Radio = Radiobutton(frame_F1, text="겨드랑이", value="겨드랑이", variable=areagetter, width=7).grid(row=1,column=4)
-
-strgetter = StringVar(value="36.5")
-tempTextBox = Entry(frame_F1,textvariable=strgetter,width=10).grid(row=2,column=1)
 
 
-randomButton = Button(frame_F1, text="자동 입력(랜덤)")
-randomButton.grid(row=3,column=0,columnspan=2)
-
-submitButton = Button(frame_F1, text="결과확인")
-submitButton.grid(row=3,column=2)
-
-window.mainloop()
 
 
 print('출입자의 체온을 기록합니다.....') # Q1 프로그램에 대한 안내문구
@@ -140,22 +79,128 @@ def randomInput():
         rtemperature = random.uniform(34, 39) # 34.7 ~ 38.1
     return [rgroup, rspot, rtemperature]
 
-resultlist = list()
-for i in range(10): # Q9 10개의 랜덤 입력값
-    result = dict() # Q9 결과를 딕셔너리 형태로 만들어 저장
-    rinput = randomInput()
-    result['연령별'] = rinput[0]
-    result['측정부위'] = rinput[1]
-    result['체온'] = rinput[2]
-    message = validateInput(rinput)
-    if message==True:
-        checkmessage = checkBodytemperature(rinput[0], rinput[1], rinput[2])
-        result['정상여부'] = checkmessage
-    else: # Q9-b 체온에 잘못된 입력값이 있는 경우 6번 함수 실행하지 말고 바로 '정상여부'에 '측정오류'라고 저장
-        result['정상여부'] = '측정오류'
-    result['측정일시'] = str(datetime.now())
+# resultlist = list()
+# for i in range(10): # Q9 10개의 랜덤 입력값
+#     result = dict() # Q9 결과를 딕셔너리 형태로 만들어 저장
+#     rinput = randomInput()
+#     result['연령별'] = rinput[0]
+#     result['측정부위'] = rinput[1]
+#     result['체온'] = rinput[2]
+#     message = validateInput(rinput)
+#     if message==True:
+#         checkmessage = checkBodytemperature(rinput[0], rinput[1], rinput[2])
+#         result['정상여부'] = checkmessage
+#     else: # Q9-b 체온에 잘못된 입력값이 있는 경우 6번 함수 실행하지 말고 바로 '정상여부'에 '측정오류'라고 저장
+#         result['정상여부'] = '측정오류'
+#     result['측정일시'] = str(datetime.now())
         
-    resultlist.append(result) # Q9-c 총 10개의 결과를 하나의 리스트 변수에 저장
+#     resultlist.append(result) # Q9-c 총 10개의 결과를 하나의 리스트 변수에 저장
     
-print('\n체온값 검증 자동 테스트 10회......\n') 
-print(resultlist) # Q10 9번 결과를 출력
+# print('\n체온값 검증 자동 테스트 10회......\n') 
+# print(resultlist) # Q10 9번 결과를 출력
+
+
+from tkinter import *
+
+
+window = Tk()
+window.title("체온 측정 프로그램")
+
+def centerWindow():
+    w = 500
+    h = 200
+
+    sw = window.winfo_screenwidth()
+    sh = window.winfo_screenheight()
+
+    x = (sw - 400)/2
+    y = (sh- 400)/2
+    window.geometry('%dx%d+%d+%d'%(w,h,x,y))
+centerWindow()
+
+# window에서 좌우로 구분하여 배치할수 있는 요소들을 배치하기 위해서 F1이라는 이름으로 프레임을 하나 만듬 
+frame_F1 = Frame(window, relief="solid",padx=10,pady=10)
+frame_F1.grid(row=0, column=0)
+
+# # F1 프레임을 좌우로 구분하기 위해서 프레임 내에서 프레임을 좌|우, 2개로 나누어서 생성함 
+# f1_lhs = Frame(frame_F1, relief="solid", padx=1, pady=1, width=20)
+# f1_lhs.grid(row=0, column=0)
+
+# f1_rhs = Frame(frame_F1, relief="solid", padx=1, pady=1)
+# f1_rhs.grid(row=0, column=1)
+
+
+#왼쪽에 놓일 라벨과 랜덤 생성 버튼 
+ageLabel = Label(frame_F1, text="연령대 선택 :",width=20)
+ageLabel.grid(row=0,column=0)
+
+areaLabel = Label(frame_F1, text="측정 부위 선택 :",width=20)
+areaLabel.grid(row=1,column=0)
+
+tempLabel = Label(frame_F1, text="체온 입력 :",width=20)
+tempLabel.grid(row=2,column=0)
+
+
+
+#오른쪽에 놓일 라벨과 결과 확인 버튼 
+agegetter = StringVar(value="11-65세")
+age0radio = Radiobutton(frame_F1, text="0-2세", value="0-2세", variable=agegetter, width=7)
+age1radio = Radiobutton(frame_F1, text="3-10세", value="3-10세", variable=agegetter, width=7)
+age2radio = Radiobutton(frame_F1, text="11-65세", value="11-65세", variable=agegetter, width=7)
+age3radio = Radiobutton(frame_F1, text="65세 이상", value="65세 이상", variable=agegetter, width=7)
+age0radio.grid(row=0,column=1)
+age1radio.grid(row=0,column=2)
+age2radio.grid(row=0,column=3)
+age3radio.grid(row=0,column=4) 
+
+areagetter = StringVar(value="귀")
+area1Radio = Radiobutton(frame_F1, text="구강 ", value="구강", variable=areagetter, width=7)
+area2Radio = Radiobutton(frame_F1, text="귀", value="귀", variable=areagetter, width=7)
+area3Radio = Radiobutton(frame_F1, text="항문", value="항문", variable=areagetter, width=7)
+area4Radio = Radiobutton(frame_F1, text="겨드랑이", value="겨드랑이", variable=areagetter, width=7)
+area1Radio.grid(row=1,column=1)
+area2Radio.grid(row=1,column=2)
+area3Radio.grid(row=1,column=3)
+area4Radio.grid(row=1,column=4)
+
+tempGetter = StringVar(value="36.5")
+tempTextBox = Entry(frame_F1,textvariable=tempGetter,width=17)
+tempTextBox.grid(row=2,column=1,columnspan=2)
+
+def randomSet():
+    global age0radio
+    randomSample = randomInput()
+    print(randomSample)
+    if(randomSample[0]=="0-2세"):
+        age0radio.invoke()
+    elif(randomSample[0]=="3-10세"):
+        age1radio.invoke()
+    elif(randomSample[0]=="11-65세"):
+        age2radio.invoke()
+    elif(randomSample[0]=="65세 이상"):
+        age3radio.invoke()
+
+    if(randomSample[1]=="구강"):
+        area1Radio.invoke()
+    elif(randomSample[1]=="귀"):
+        area2Radio.invoke()
+    elif(randomSample[1]=="항문"):
+        area3Radio.invoke()
+    elif(randomSample[1]=="겨드랑이"):
+        area4Radio.invoke()
+
+    tempGetter.set(round(randomSample[2],2))
+
+def checkOne():
+    userinput =""+str(agegetter.get)+str(areagetter.get)+str(tempGetter.get)
+    
+    validateInput(userinput)
+
+
+randomButton = Button(frame_F1, text="자동 입력(랜덤)", command=randomSet)
+randomButton.grid(row=3,column=0,columnspan=3)
+
+submitButton = Button(frame_F1, text="결과확인", command=checkOne)
+submitButton.grid(row=3,column=3)
+
+window.mainloop()
