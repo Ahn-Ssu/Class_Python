@@ -192,9 +192,12 @@ def randomSet():
     tempGetter.set(round(randomSample[2],2))
 
 def checkOne():
-    userinput =""+str(agegetter.get)+str(areagetter.get)+str(tempGetter.get)
+    print("age :", agegetter.get())
+    print("age :", areagetter.get() )
+    print("age :", tempGetter.get() )
+    # userinput =""+str(agegetter.get)+str(areagetter.get)+str(tempGetter.get)
     
-    validateInput(userinput)
+    # validateInput(userinput)
 
 
 randomButton = Button(frame_F1, text="자동 입력(랜덤)", command=randomSet)
