@@ -16,14 +16,50 @@ def centerWindow():
     window.geometry('%dx%d+%d+%d'%(w,h,x,y))
 centerWindow()
 
-frame = Frame(window, relief="solid",padx=10,pady=10,bd=5)
-frame.pack()
+# window에서 좌우로 구분하여 배치할수 있는 요소들을 배치하기 위해서 F1이라는 이름으로 프레임을 하나 만듬 
+frame_F1 = Frame(window, relief="solid",padx=10,pady=10)
+frame_F1.grid(row=0, column=0)
 
-ageLabel = Label(frame, text="연령대 선택 :")
-ageLabel.grid(frame,row=0,column=0)
+# F1 프레임을 좌우로 구분하기 위해서 프레임 내에서 프레임을 좌|우, 2개로 나누어서 생성함 
+f1_lhs = Frame(frame_F1, relief="solid", padx=1, pady=1, width=20)
+f1_lhs.grid(row=0, column=0)
 
-age0radio = Radiobutton(frame, text="0-2세", value=1).grid(frame,row=0,column=1)
-age3radio = Radiobutton(frame, text="3-10세", value=2).grid(frame,row=0,column=2)
+f1_rhs = Frame(frame_F1, relief="solid", padx=1, pady=1)
+f1_rhs.grid(row=0, column=1)
+
+
+#왼쪽에 놓일 라벨과 랜덤 생성 버튼 
+ageLabel = Label(f1_lhs, text="연령대 선택 :")
+ageLabel.grid(row=0,column=0).
+
+areaLabel = Label(f1_lhs, text="측정 부위 선택 :")
+areaLabel.grid(row=1,column=0)
+
+tempLabel = Label(f1_lhs, text="체온 입력 :")
+tempLabel.grid(row=2,column=0)
+
+randomButton = Button(f1_lhs, text="자동 입력(랜덤)")
+randomButton.gird(row=3,column=0)
+
+#오른쪽에 놓일 라벨과 결과 확인 버튼 
+agegetter = StringVar(value="11-65세")
+age0radio = Radiobutton(f1_rhs, text="0-2세", value="0-2세", variable=agegetter, width=7).grid(row=0,column=0)
+age3radio = Radiobutton(f1_rhs, text="3-10세", value="3-10세", variable=agegetter, width=7).grid(row=0,column=1)
+age3radio = Radiobutton(f1_rhs, text="11-65세", value="11-65세", variable=agegetter, width=7).grid(row=0,column=2)
+age3radio = Radiobutton(f1_rhs, text="65세 이상", value="65세 이상", variable=agegetter, width=7).grid(row=0,column=3)
+
+areagetter = StringVar(value="귀")
+area1Radio = Radiobutton(f1_rhs, text="구강 ", value="구강", variable=areagetter, width=7).grid(row=1,column=0)
+area2Radio = Radiobutton(f1_rhs, text="귀", value="귀", variable=areagetter, width=7).grid(row=1,column=1)
+area3Radio = Radiobutton(f1_rhs, text="항문", value="항문", variable=areagetter, width=7).grid(row=1,column=2)
+area4Radio = Radiobutton(f1_rhs, text="겨드랑이", value="겨드랑이", variable=areagetter, width=7).grid(row=1,column=3)
+
+strgetter = StringVar(value="36.5")
+tempTextBox = Entry(f1_rhs,textvariable=strgetter,width=10).grid(row=2,column=0)
+
+submitButton = Button(f1_rhs, text="결과확인")
+submitButton.gird(row=3,column=0)
+
 window.mainloop()
 
 
