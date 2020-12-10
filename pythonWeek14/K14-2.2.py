@@ -1,24 +1,36 @@
 from tkinter import *
-from tkinter import Tk, Canvas
-from PIL import ImageTk, Image
+import time
 
-root = Tk()
-canvas = Canvas(root, width=400, height = 300)
+class Circle:
+    def __init__(self, canvas):
+        self.canvas = canvas
+        self.id = canvas.create_oval(150,150,45,45)
+    def move_x(self, x):
+        self.x = x
+        self.canvas.move(self.id, self.x, 0) 
+    def move_y(self, y):
+        self.y = y
+        self.canvas.move(self.id, 0, self.y) 
+    def move_xy(self,x, y):
+        self.x = x
+        self.y = y
+        self.canvas.move(self.id, self.x, self.y)
+
+class f_Circle(Circle):
+    def __init__(self, canvas, color):
+        self.canvas = canvas
+        self.id = canvas.create_oval(10,10,45,45, fill=color)
+
+tk = Tk()
+canvas = Canvas(tk, width = 500, height = 400, bd=0, highlightthickness=0)
 canvas.pack()
 
-def oneclick(event):
-    im = Image.open('./pythonWeek13/theMoon.jpg')
-    canvas.image = ImageTk.PhotoImage(im)
-    canvas.create_image(0,0, image=canvas.image, anchor='nw')
+circ = Circle(canvas)
+bcirc = f_Circle(canvas, "blue")
+rcirc = f_Circle(canvas, "pink")
+canvas.pack()
 
-def doubleclick(event):
-    im = Image.open('./pythonWeek13/week4Handong 14.jpg')
-    canvas.image = ImageTk.PhotoImage(im)
-    canvas.create_image(0,0, image=canvas.image, anchor='nw')
-
-widget = Button(None, text="Mouse Clicks")
-widget.pack()
-widget.bind('<Button-1>',oneclick)
-widget.bind('<Double-1>',doubleclick)
-root.mainloop()
-
+circ.move_x(10)
+bcirc.move_xy(150,150)
+rcirc.move_y(200)
+canvas.pack()
